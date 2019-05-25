@@ -1,9 +1,8 @@
 ﻿using System;
-using Terraria;
 using System.Reflection;
-using Terraria.ModLoader;
-using Terraria.Localization;
 using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace ICUETerrariaIntegration.Commands
 {
@@ -35,7 +34,7 @@ namespace ICUETerrariaIntegration.Commands
 						Main.NewText($"{cattr.Name} : {field.GetValue(null)}", Color.Purple);
 				}
 			}
-			
+
 		}
 	}
 }

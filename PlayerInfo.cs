@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.Localization;
-using Terraria.IO;
-using Microsoft.Xna.Framework;
 
 namespace ICUETerrariaIntegration
 {

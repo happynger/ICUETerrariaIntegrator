@@ -1,12 +1,7 @@
-﻿using System;
-using CUE.NET;
-using CUE.NET.Groups;
+﻿using CUE.NET;
 using CUE.NET.Brushes;
-using CUE.NET.Devices.Mouse;
-using CUE.NET.Devices.Mouse.Enums;
 using CUE.NET.Devices.Generic;
-using System.Collections.Generic;
-using CUE.NET.Devices.Generic.Enums;
+using CUE.NET.Devices.Mouse;
 
 namespace ICUETerrariaIntegration
 {

@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using CUE.NET.Brushes;
 using CUE.NET.Devices.Generic;
-using CUE.NET.Devices.Generic.Enums;
 
 namespace ICUETerrariaIntegration
 {

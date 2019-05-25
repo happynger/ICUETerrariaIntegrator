@@ -1,9 +1,8 @@
 ﻿using System;
 using CUE.NET;
-using System.Reflection;
-using Terraria.ModLoader;
-using CUE.NET.Exceptions;
 using CUE.NET.Devices.Generic.Enums;
+using CUE.NET.Exceptions;
+using Terraria.ModLoader;
 
 namespace ICUETerrariaIntegration
 {
@@ -26,9 +25,9 @@ namespace ICUETerrariaIntegration
 				MouseSystem.Setup();
 			}
 			catch (CUEException e)
-				{ Console.WriteLine($"[CUE Exception] : {Enum.GetName(typeof(CorsairError), e.Error)}"); }
+			{ Console.WriteLine($"[CUE Exception] : {Enum.GetName(typeof(CorsairError), e.Error)}"); }
 			catch (WrapperException e)
-				{ Console.WriteLine($"[Wrapper Exception] : {e.Message}"); IsSDKAvailable = false; }
+			{ Console.WriteLine($"[Wrapper Exception] : {e.Message}"); IsSDKAvailable = false; }
 
 			Config.SaveConfig();
 		}

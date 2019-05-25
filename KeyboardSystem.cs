@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using CUE.NET;
 using CUE.NET.Brushes;
 using CUE.NET.Devices.Generic;
 using CUE.NET.Devices.Generic.Enums;
 using CUE.NET.Devices.Keyboard;
-using CUE.NET.Exceptions;
 using CUE.NET.Groups;
 
 namespace ICUETerrariaIntegration
@@ -65,7 +64,7 @@ namespace ICUETerrariaIntegration
 
 			HealthGroup = new ListLedGroup(keyboard, HealthLedIDs);
 			ManaGroup = new ListLedGroup(keyboard, ManaLedIDs);
-			
+
 			keyboard.Brush = (SolidColorBrush)CorsairColor.Transparent;
 			keyboard.Update();
 		}

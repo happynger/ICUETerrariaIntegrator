@@ -72,7 +72,6 @@
     <Compile Include="Brushes\HealthBrush.cs" />
     <Compile Include="Brushes\HitBrush.cs" />
     <Compile Include="KeyboardSystem.cs" />
-    <Compile Include="Items\ExampleItem.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Brushes\ManaBrush.cs" />
     <Compile Include="MouseSystem.cs" />
@@ -84,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Items\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
