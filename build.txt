@@ -1,0 +1,7 @@
+﻿author = HappyOri
+version = 0.1
+displayName = ICUEIntegration
+languageVersion = 6
+side = Client
+dllReferences = CUE.NET
+includePDB = true
