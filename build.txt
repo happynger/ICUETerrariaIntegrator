@@ -2,6 +2,8 @@
 version = 0.1
 displayName = ICUEIntegration
 languageVersion = 6
+buildIgnore = .vs/, .sln, .git/, .gitattributes, .gitignore, .md, build.txt, bin/, obj/
 side = Client
 dllReferences = CUE.NET
-includePDB = true
+includeSource = true
+includePDB = false
