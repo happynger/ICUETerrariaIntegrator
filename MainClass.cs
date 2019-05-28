@@ -14,23 +14,22 @@ namespace ICUETerrariaIntegration
 		public override void Load()
 		{
 			Config.Load();
+			Logger.Initialize();
 
 			try
 			{
 				CueSDK.PossibleX64NativePaths.Add(Config.SDKPathx64);
 				CueSDK.PossibleX86NativePaths.Add(Config.SDKPathx86);
 				CueSDK.Initialize(true);
-				Console.WriteLine($"Initialised with {CueSDK.LoadedArchitecture}-SDK");
 				KeyboardSystem.Setup();
 				MouseSystem.Setup();
 			}
 			catch (CUEException e)
-			{ Console.WriteLine($"[CUE Exception] : {Enum.GetName(typeof(CorsairError), e.Error)}"); }
+			{ Logger.Log($"[CUE Exception] : {Enum.GetName(typeof(CorsairError), e.Error)}"); }
 			catch (WrapperException e)
-			{ Console.WriteLine($"[Wrapper Exception] : {e.Message}"); IsSDKAvailable = false; }
+			{ Logger.Log($"[Wrapper Exception] : {e.Message}"); IsSDKAvailable = false; }
 
 			Config.SaveConfig();
-			Logger.Initialize();
 		}
 
 		public MainClass()
