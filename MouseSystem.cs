@@ -45,5 +45,10 @@ namespace ICUETerrariaIntegration
 			mouse.Update();
 		}
 
+		public static void ResetMouse()
+		{
+			mouse.Brush = (SolidColorBrush)new CorsairColor(255, 0, 0, 0);
+		}
+
 	}
 }

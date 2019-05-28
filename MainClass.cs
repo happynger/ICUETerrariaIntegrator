@@ -30,6 +30,7 @@ namespace ICUETerrariaIntegration
 			{ Console.WriteLine($"[Wrapper Exception] : {e.Message}"); IsSDKAvailable = false; }
 
 			Config.SaveConfig();
+			Logger.Initialize();
 		}
 
 		public MainClass()

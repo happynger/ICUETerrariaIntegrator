@@ -14,6 +14,9 @@ namespace ICUETerrariaIntegration
 		public static CorsairKeyboard keyboard;
 		public static bool IsKeyboardCompatible = true;
 
+		public static float ManaP = 0f;
+		public static float HealthP = 0f;
+
 		private static List<CorsairLedId> HealthLedIDs;
 		private static List<CorsairLedId> ManaLedIDs;
 		private static ListLedGroup HealthGroup;
@@ -71,8 +74,8 @@ namespace ICUETerrariaIntegration
 
 		public static void ChangeHealth(int health, int healthMax)
 		{
-			float healthp = (float)Math.Ceiling((float)health / healthMax * 10) / 10f;
-			int num_keys = (int)((healthp + 0.00001f) * 10);
+			HealthP = (float)Math.Ceiling((float)health / healthMax * 10) / 10f;
+			int num_keys = (int)((HealthP + 0.00001f) * 10);
 			HealthBrush.BarProgress = num_keys;
 			HealthBrush.HealthP = (int)((float)health / healthMax * 100);
 
@@ -82,13 +85,21 @@ namespace ICUETerrariaIntegration
 
 		public static void ChangeMana(int mana, int manaMax)
 		{
-			float manap = (float)Math.Ceiling((float)mana / manaMax * 10) / 10f;
-			int num_keys = (int)((manap + 0.00001f) * 12);
+			ManaP = (float)Math.Ceiling((float)mana / manaMax * 10) / 10f;
+			int num_keys = (int)((ManaP + 0.00001f) * 12);
 			ManaBrush.BarProgress = num_keys;
 			ManaBrush.ManaP = (int)((float)mana / manaMax * 120);
 
 			ManaGroup.Brush = ManaBrush;
 			keyboard.Update();
+		}
+
+		public static void ResetBars()
+		{
+			var black = new CorsairColor(255, 0, 0, 0);
+
+			ManaGroup.Brush = (SolidColorBrush)black;
+			HealthGroup.Brush = (SolidColorBrush)black;
 		}
 	}
 }

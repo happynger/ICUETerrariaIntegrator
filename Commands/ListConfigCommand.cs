@@ -34,7 +34,6 @@ namespace ICUETerrariaIntegration.Commands
 						Main.NewText($"{cattr.Name} : {field.GetValue(null)}", Color.Purple);
 				}
 			}
-
 		}
 	}
 }

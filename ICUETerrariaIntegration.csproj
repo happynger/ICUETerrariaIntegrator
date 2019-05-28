@@ -65,6 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\DumpDataCommand.cs" />
     <Compile Include="Commands\ListConfigCommand.cs" />
     <Compile Include="Commands\WarningCommand.cs" />
     <Compile Include="Config.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Brushes\HealthBrush.cs" />
     <Compile Include="Brushes\HitBrush.cs" />
     <Compile Include="KeyboardSystem.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Brushes\ManaBrush.cs" />
     <Compile Include="MouseSystem.cs" />
