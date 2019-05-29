@@ -32,6 +32,15 @@ namespace ICUETerrariaIntegration
 			Config.SaveConfig();
 		}
 
+		public override void PreSaveAndQuit()
+		{
+			if (KeyboardSystem.IsKeyboardCompatible)
+				KeyboardSystem.ResetBars();
+
+			if (MouseSystem.IsMouseCompatible)
+				MouseSystem.ResetMouse();
+		}
+
 		public MainClass()
 		{
 			Instance = this;

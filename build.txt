@@ -6,4 +6,4 @@ buildIgnore = .vs/, .sln, .git/, .gitattributes, .gitignore, .md, build.txt, bin
 side = Client
 dllReferences = CUE.NET
 includeSource = true
-includePDB = false
+includePDB = true

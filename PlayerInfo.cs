@@ -22,15 +22,6 @@ namespace ICUETerrariaIntegration
 				Main.NewText("Current Mouse is not supported by this mod :(", msgColor);
 		}
 
-		public override void PlayerDisconnect(Player player)
-		{
-			if (KeyboardSystem.IsKeyboardCompatible)
-				KeyboardSystem.ResetBars();
-
-			if (MouseSystem.IsMouseCompatible)
-				MouseSystem.ResetMouse();
-		}
-
 		public override void PostUpdate()
 		{
 			if (!KeyboardSystem.IsKeyboardCompatible)

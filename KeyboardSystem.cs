@@ -100,6 +100,7 @@ namespace ICUETerrariaIntegration
 
 			ManaGroup.Brush = (SolidColorBrush)black;
 			HealthGroup.Brush = (SolidColorBrush)black;
+			keyboard.Update();
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Reflection;
 using Terraria;
 using Terraria.IO;
 
@@ -7,7 +9,7 @@ namespace ICUETerrariaIntegration
 	public static class Config
 	{
 		#region Configurations
-		//! If you add any Configurations make sure to add them to the Create/Read/SaveConfig methods
+		//! If you add any Configurations make sure to add them to the ReadConfig methods
 		[CUEConfig("Disable Warnings")]
 		public static bool DisableWarnings = false;
 		[CUEConfig("SDK Path x64")]
@@ -27,15 +29,6 @@ namespace ICUETerrariaIntegration
 				CreateConfig();
 		}
 
-		public static void SaveConfig()
-		{
-			configuration.Clear();
-			configuration.Put("Disable Warnings", DisableWarnings);
-			configuration.Put("SDK Path x64", SDKPathx64);
-			configuration.Put("SDK Path x86", SDKPathx86);
-			configuration.Save();
-		}
-
 		private static bool ReadConfig()
 		{
 			if (configuration.Load())
@@ -48,12 +41,32 @@ namespace ICUETerrariaIntegration
 			return false;
 		}
 
+		public static void SaveConfig()
+		{
+			Type type = typeof(Config);
+
+			configuration.Clear();
+			foreach (FieldInfo field in type.GetFields())
+			{
+				var attribute = field.GetCustomAttribute<CUEConfigAttribute>();
+
+				var tmp = field.GetValue(null);
+				configuration.Put(attribute.Name, tmp);
+			}
+			configuration.Save();
+		}
 		private static void CreateConfig()
 		{
+			Type type = typeof(Config);
+
 			configuration.Clear();
-			configuration.Put("Disable Warnings", DisableWarnings);
-			configuration.Put("SDK Path x64", SDKPathx64);
-			configuration.Put("SDK Path x86", SDKPathx86);
+			foreach (var field in type.GetFields())
+			{
+				var attribute = field.GetCustomAttribute<CUEConfigAttribute>();
+
+				var tmp = field.GetValue(null);
+				configuration.Put(attribute.Name, tmp);
+			}
 			configuration.Save();
 		}
 	}
